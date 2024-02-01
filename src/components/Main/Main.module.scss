@@ -1,0 +1,97 @@
+// Import variables
+@import '../../assets/css/Variables.scss';
+
+// Define a mixin for common image module styles
+@mixin imageModuleStyles {
+  width: 50%;
+  padding: 30px; /* Updated padding */
+  box-sizing: border-box;
+  text-align: justify;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $White;
+
+  img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    margin-bottom: 30px; /* Updated margin */
+  }
+
+  .image-module_header {
+    width: 90%;
+    height: 100%;
+    color: $Blue;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    text-align: center;
+    padding: 0 0 1em 0;
+  }
+
+  p {
+    text-align: left;
+    padding: 0 30px 0 30px; /* Updated padding */
+    font-family: 'Inter';
+    position: relative;
+    bottom: 300px;
+  }
+}
+
+.image-section,
+.image-section .image-row {
+  width: auto;
+  display: block;
+  background-color: $White;
+  padding: 30px; /* Updated padding */
+
+  .image-column {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px; /* Added padding to .image-column */
+
+    .image-module {
+      @include imageModuleStyles;
+      height: 500px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .image-section .image-row .image-column .image-module {
+    width: 100%;
+    padding: 30px; /* Updated padding */
+
+    h2 {
+      padding: 0; /* Top, right, bottom, left */
+      margin: auto;
+    }
+
+    p {
+      padding: 0 30px 0 30px; /* Updated padding */
+    }
+  }
+}
+
+.Header {
+  background-color: white;
+  padding: 30px; /* Updated padding */
+  margin: 0;
+
+  @media (max-width: 768px) {
+    padding: 30px; /* Updated padding */
+  }
+}
+
+.HeaderImage {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
